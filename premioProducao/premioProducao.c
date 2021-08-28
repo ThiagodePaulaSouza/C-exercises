@@ -8,42 +8,11 @@ void clrscr(){
 void gotoxy(int x, int y){
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), (COORD){x-1,y-1});
 }
-//Cálculo do Premio de Producão por peças
-float CalcularPromocao(int cod, int qtd)
-{
-	float promocao = 0;
-
-	if(cod == 101)
-	{
-		promocao = qtd * 1;
-		if(promocao > 10000)
-			promocao += 500;
-	}
-	else if(cod == 105)
-	{
-		promocao = qtd * 0.91f;
-		if(promocao > 10000)
-			promocao += 350;
-	}
-	else if(cod == 110)
-	{
-		promocao = qtd * 0.80f;
-		if(promocao > 10000)
-			promocao += 400;
-	}
-	else if(cod >= 115 && cod <= 120)
-	{
-		promocao = qtd * 0.95f;
-		if(promocao > 10000)
-			promocao += 420;
-	}
-	return promocao;
-}
 void main() {
     //Define Váriaveis
     char nome[30];
     int cod_funcao;
-    float qtd_pecas, premio_peca, promocao;
+    float qtd_pecas, promocao = 0;
 
     //input do usuario
     clrscr();
@@ -60,7 +29,32 @@ void main() {
     scanf("%f", &qtd_pecas);
     gotoxy(10,16);
 
+	//Cálculo do Premio de Producão por peças
+	if(cod_funcao == 101)
+	{
+		promocao = qtd_pecas * 1.00f;
+		if(promocao >= 10000)
+			promocao += 500;
+	}
+	else if(cod_funcao == 105)
+	{
+		promocao = qtd_pecas * 0.91f;
+		if(promocao >= 10000)
+			promocao += 350;
+	}
+	else if(cod_funcao == 110)
+	{
+		promocao = qtd_pecas * 0.80f;
+		if(promocao >= 10000)
+			promocao += 400;
+	}
+	else if(cod_funcao >= 115 && cod_funcao <= 120)
+	{
+		promocao = qtd_pecas * 0.95f;
+		if(promocao >= 10000)
+			promocao += 420;
+	}
+
     //output para o usuario
-    printf("O valor da promocao foi: %f", CalcularPromocao(cod_funcao, qtd_pecas));
-	return 0;
+    printf("O valor do premio da promocao foi: %f", promocao);
 }
