@@ -7,7 +7,7 @@ int main()
     do
     {
         printf("\nPrograma para calcular IMC\n");
-        printf("\nDigite o seu peso: ");
+        printf("\nDigite o seu verdadeiro peso: ");
         scanf("%f", &peso);
         printf("Digite sua altura: ");
         scanf("%f", &altura);
