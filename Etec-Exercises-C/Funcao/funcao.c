@@ -3,28 +3,23 @@
 
 void mensagem(void)
 {
-    printf("***********************");
-    printf("\nETEC Armando Pannunzio\n");
+    printf("**********ex1*************");
+    printf("\nMedidor de Raio Pannunzio\n");
     printf("***********************\n");
 }
 
-int multiplicacao(int n1, int n2)
+int calcular(int raio)
 {
-    int produto;
-    produto = n1 * n2;
-    return (produto);
+    int area;
+    area = 3.14*(raio * raio);
+    return (area);
 }
-
-void main()
+int main()
 {
-    int v1, v2, resultado;
-    //chamar a funcao mensagem
+    int raio, area;
     mensagem();
-    printf("\nDigite o primeiro valor: ");
-    scanf("%d", &v1);
-    printf("\nDigite o primeiro valor: ");
-    scanf("%d", &v2);
-    //chamar a funcao multiplicacao
-    resultado = multiplicacao(v1, v2);
-    printf("\nResultado = %d\n", resultado);
+    printf("\nDigite o valor do raio: ");
+    scanf("%i", &raio);
+    area = calcular(raio);
+    printf("\nArea = %i\n", area);
 }
