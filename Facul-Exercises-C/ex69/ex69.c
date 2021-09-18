@@ -45,9 +45,10 @@ void main()
     printf("O Resultado da Inversao foi: \n");
     for (i = 0, j = 19; i < 20 && j >= 0; i++, j--)
     {
+        //Beep(400, 500);
         gotoxy(60, i + 6);
         vetorB[i] = vetorA[j];
-        /* Saída de Dados */
+         /* Saída de Dados */
         printf("%i \n", vetorB[i]);
     }
 }
