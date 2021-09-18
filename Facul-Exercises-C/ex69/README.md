@@ -1,0 +1,2 @@
+## 69
+### Criar leiaute, DHF, Algoritmo e fluxograma que , leia dois vetores A com 20 elementos. Construa um vetor B da mesma dimensão com os mesmo elementos de A, sendo que estes deverão estar invertidos, ou seja o primeiro elemento de A passa a ser o último elemento de B, o segundo elemento de A passa a ser o penúltimo de B e assim por diante.. Ao final apresente os elementos dos dois vetores.

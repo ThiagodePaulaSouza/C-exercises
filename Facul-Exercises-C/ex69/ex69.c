@@ -9,39 +9,44 @@
  * 
  */
 
-/*
-    variaveis
-        vetorA com 20 elementos
-        vetorB com 20 elementos
-    entrada de dados
-        digite os elementos do vetor A -- repete 20x
-    calculo de dados
-        o q eu acho né, eu acho que ele tem que percorrer o vetor inteiro salvar em uma variavel e dps só mostrar a variavel
-        
-    saida de dados
-        apresente os elementos dos vetores A e B
-
-    leia 2 vetores A com 20 elementos
-    Construa um veto B da mesma dimensão com os mesmos elementos de A
-    Sendo que estes deverão estar invertidos, 
-    ou seja o primeiro elemento de A passa a ser o último elemento de B
-    o segundo elemento de A passa a ser o penúltimo de B etc...
-    Ao Final apresente os elementos dos dois vetores
-*/
 #include <stdio.h>
-int main() {
+#include <stdlib.h>
+#include <conio.h>
+#include <ctype.h>
+#include <Windows.h>
+
+void clrscr()
+{
+    system("@cls||clear");
+}
+void gotoxy(int x, int y)
+{
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), (COORD){x - 1, y - 1});
+}
+
+void main() {
+    /* Variaveis */
     int vetorA[20], vetorB[20];
-    int i, j;
-    printf("\nDigite um 20 numeros!\n");
+    int i, j=10;
+
+    /* Entrada de Dados */
+    clrscr();
+    gotoxy(10, 4);
+    printf("Digite um 20 numeros!");
     for(i = 0; i < 20; i++) 
 	{
+        gotoxy(j, i+6);
         scanf("%i", &vetorA[i]);
     }
-	printf("\nO Resultado da Inversao foi: ");
+
+    /* Calculo de Dados e Saída de Dados */ 
+    gotoxy(60, 4);
+	printf("O Resultado da Inversao foi: \n");
     for(i=0, j = 19; i<20 && j >= 0; i++, j-- ) 
 	{
+        //Beep(400, 500);
+        gotoxy(60, i+6);
         vetorB[i] = vetorA[j];
-        printf("\n%i", vetorB[i]);
+        printf("%i \n", vetorB[i]);
     }
-    return 0;
 }
