@@ -24,29 +24,30 @@ void gotoxy(int x, int y)
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), (COORD){x - 1, y - 1});
 }
 
-void main() {
+void main()
+{
     /* Variaveis */
     int vetorA[20], vetorB[20];
-    int i, j=10;
+    int i, j = 10;
 
     /* Entrada de Dados */
     clrscr();
     gotoxy(10, 4);
     printf("Digite um 20 numeros!");
-    for(i = 0; i < 20; i++) 
-	{
-        gotoxy(j, i+6);
+    for (i = 0; i < 20; i++)
+    {
+        gotoxy(j, i + 6);
         scanf("%i", &vetorA[i]);
     }
 
-    /* Calculo de Dados e Saída de Dados */ 
+    /* Calculo de Dados */
     gotoxy(60, 4);
-	printf("O Resultado da Inversao foi: \n");
-    for(i=0, j = 19; i<20 && j >= 0; i++, j-- ) 
-	{
-        //Beep(400, 500);
-        gotoxy(60, i+6);
+    printf("O Resultado da Inversao foi: \n");
+    for (i = 0, j = 19; i < 20 && j >= 0; i++, j--)
+    {
+        gotoxy(60, i + 6);
         vetorB[i] = vetorA[j];
+        /* Saída de Dados */
         printf("%i \n", vetorB[i]);
     }
 }
