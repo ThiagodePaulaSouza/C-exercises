@@ -27,7 +27,7 @@ void main()
 {
     /* Variaveis */
     int vetorA[20], vetorB[20];
-    int i, j = 10;
+    int i, j;
 
     /* Entrada de Dados */
     clrscr();
@@ -35,7 +35,7 @@ void main()
     printf("Digite um 20 numeros!");
     for (i = 0; i < 20; i++)
     {
-        gotoxy(j, i + 6);
+        gotoxy(10, i + 6);
         scanf("%i", &vetorA[i]);
     }
 
@@ -44,10 +44,22 @@ void main()
     printf("O Resultado da Inversao foi: \n");
     for (i = 0, j = 19; i < 20 && j >= 0; i++, j--)
     {
-        Beep(400, 500);
-        gotoxy(60, i + 6);
         vetorB[i] = vetorA[j];
-         /* Saída de Dados */
+    }
+
+    /* Saída de Dados */
+    clrscr();
+    gotoxy(10, 4);
+    printf("Vetor A:");
+    gotoxy(60, 4);
+    printf("Vetor B:");
+    for ( i = 0; i < 20; i++)
+    {
+        gotoxy(10, i + 6);
+        printf("%i", vetorA[i]);
+
+        gotoxy(60, i + 6);
         printf("%i \n", vetorB[i]);
     }
+    getch();
 }
